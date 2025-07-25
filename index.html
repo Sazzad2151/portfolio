@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Developer | Software Engineer</title>
+    <title>Sazzad Hossain | Oracle APEX Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #2ecc71;
+            --primary-color: #FF6B00; /* Oracle Brand Orange */
+            --secondary-color: #1F4E79; /* Dark Blue */
+            --light-color: #F2F2F2;
+            --dark-color: #333333;
         }
 
         * {
@@ -53,10 +52,11 @@
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
 
         .btn:hover {
-            background: #2980b9;
+            background: #E55C00;
             transform: translateY(-2px);
         }
 
@@ -159,6 +159,13 @@
             color: var(--primary-color);
         }
 
+        .hero-text .job-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
         .hero-text p {
             font-size: 1.2rem;
             margin-bottom: 30px;
@@ -173,7 +180,7 @@
         .hero-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 50%;
+            border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
@@ -234,27 +241,25 @@
             margin-top: 30px;
         }
 
-        .skill-item {
-            margin-bottom: 20px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
         }
 
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-
-        .skill-bar {
-            height: 10px;
+        .skill-tag {
             background: #e0e0e0;
+            padding: 10px 15px;
             border-radius: 5px;
-            overflow: hidden;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s;
         }
 
-        .skill-progress {
-            height: 100%;
+        .skill-tag:hover {
             background: var(--primary-color);
-            border-radius: 5px;
+            color: white;
+            transform: translateY(-3px);
         }
 
         /* Projects Section */
@@ -284,17 +289,13 @@
         .project-image {
             height: 200px;
             overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
+            background: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
         }
 
         .project-info {
@@ -513,6 +514,10 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -521,7 +526,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Alex <span>Developer</span></div>
+                <div class="logo">Sazzad <span>Hossain</span></div>
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -540,18 +545,19 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span>Alex Developer</span></h1>
-                    <p>A passionate software developer specializing in building exceptional digital experiences.</p>
-                    <a href="#projects" class="btn">View My Work</a>
+                    <h1>Hi, I'm <span>Sazzad Hossain</span></h1>
+                    <div class="job-title">Oracle APEX Developer</div>
+                    <p>With 5+ years of experience building enterprise applications using Oracle APEX, PL/SQL, and modern web technologies.</p>
+                    <a href="#projects" class="btn">View My Projects</a>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-codepen"></i></a>
+                        <a href="#"><i class="fab fa-oracle"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="IMG_3212.jpg" alt="Developer Photo">
+                    <img src="sazzadhossain.jpg" alt="Sazzad Hossain - Oracle APEX Developer">
                 </div>
             </div>
         </div>
@@ -563,49 +569,27 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="sazzadhossain.jpg" alt="About Me">
+                    <img src="sazzadhossain.jpg" alt="Sazzad Hossain">
                 </div>
                 <div class="about-text">
-                    <h3>I build digital solutions that make an impact</h3>
-                    <p>With over 5 years of experience in software development, I specialize in creating efficient, scalable, and user-friendly applications. My passion lies in solving complex problems with clean, maintainable code.</p>
-                    <p>I'm proficient in multiple programming languages and frameworks, with a strong focus on web technologies. I believe in continuous learning and staying updated with the latest industry trends.</p>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>React</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Node.js</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Python</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%;"></div>
-                            </div>
-                        </div>
+                    <h3>Oracle APEX Specialist</h3>
+                    <p>I specialize in developing low-code enterprise applications using Oracle APEX with robust Oracle Database backends. My expertise includes building scalable solutions with PL/SQL, integrating REST APIs, and creating responsive UIs with JavaScript and CSS.</p>
+                    <p>I'm passionate about solving business problems through efficient database design and intuitive user interfaces that enhance productivity.</p>
+                    
+                    <h4 style="margin-top: 30px; margin-bottom: 15px;">Technical Skills</h4>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Oracle APEX</div>
+                        <div class="skill-tag">PL/SQL</div>
+                        <div class="skill-tag">SQL</div>
+                        <div class="skill-tag">Oracle Database</div>
+                        <div class="skill-tag">HTML5</div>
+                        <div class="skill-tag">CSS3</div>
+                        <div class="skill-tag">JavaScript</div>
+                        <div class="skill-tag">APEX Collections</div>
+                        <div class="skill-tag">ORDS</div>
+                        <div class="skill-tag">RESTful APIs</div>
+                        <div class="skill-tag">AJAX</div>
+                        <div class="skill-tag">jQuery</div>
                     </div>
                 </div>
             </div>
@@ -618,56 +602,53 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="sazzadhossain.jpg" alt="Project 1">
+                    <div class="project-image" style="background-color: #1F4E79;">
+                        Inventory & POS
                     </div>
                     <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-featured online store with payment integration and admin dashboard.</p>
+                        <h3>Inventory & POS Management</h3>
+                        <p>Complete inventory control with point-of-sale integration, barcode scanning, and real-time reporting.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Oracle APEX</span>
+                            <span class="tech-tag">PL/SQL</span>
+                            <span class="tech-tag">ORDS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn">Live Demo</a>
-                            <a href="#" class="btn">Code</a>
+                            <a href="#" class="btn">View Demo</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 2">
+                    <div class="project-image" style="background-color: #3A7D44;">
+                        Doctor EMR
                     </div>
                     <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>A productivity application for teams to collaborate on projects and tasks.</p>
+                        <h3>Doctor Prescription & EMR</h3>
+                        <p>Electronic Medical Records system with prescription management, patient history, and appointment scheduling.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn">Live Demo</a>
-                            <a href="#" class="btn">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Weather Dashboard</h3>
-                        <p>Real-time weather information with 5-day forecast and location search.</p>
-                        <div class="project-tech">
+                            <span class="tech-tag">Oracle APEX</span>
+                            <span class="tech-tag">REST API</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API</span>
-                            <span class="tech-tag">CSS3</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn">Live Demo</a>
-                            <a href="#" class="btn">Code</a>
+                            <a href="#" class="btn">View Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background-color: #6D326D;">
+                        Restaurant Mgmt
+                    </div>
+                    <div class="project-info">
+                        <h3>Restaurant Management System</h3>
+                        <p>End-to-end solution for table management, order processing, kitchen display, and billing.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Oracle APEX</span>
+                            <span class="tech-tag">AJAX</span>
+                            <span class="tech-tag">jQuery</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">View Demo</a>
                         </div>
                     </div>
                 </div>
@@ -681,20 +662,20 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's work together</h3>
-                    <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
+                    <h3>Let's discuss your project</h3>
+                    <p>I'm available for Oracle APEX development projects, consulting, or full-time opportunities. Reach out and let's build something great together!</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>alex@developer.com</span>
+                            <span>sazzad@example.com</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+1 (123) 456-7890</span>
+                            <span>+880 1XXX XXXXXX</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>San Francisco, CA</span>
+                            <span>Dhaka, Bangladesh</span>
                         </div>
                     </div>
                 </div>
@@ -727,7 +708,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2023 Alex Developer. All rights reserved.</p>
+                <p>&copy; 2023 Sazzad Hossain. All rights reserved.</p>
                 <ul class="footer-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -738,7 +719,7 @@
                     <a href="#"><i class="fab fa-github"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-codepen"></i></a>
+                    <a href="#"><i class="fab fa-oracle"></i></a>
                 </div>
             </div>
         </div>
@@ -768,39 +749,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Animate skill bars on scroll
-        const skillBars = document.querySelectorAll('.skill-progress');
-        
-        function animateSkillBars() {
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            });
-        }
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.id === 'about') {
-                        animateSkillBars();
-                    }
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
         });
 
         // Form submission
