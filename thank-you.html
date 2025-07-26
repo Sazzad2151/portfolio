@@ -26,12 +26,17 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #E55C00;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <h1>Thank You!</h1>
-    <p>Your message has been received.</p>
+    <p>Your message has been received. I'll get back to you soon.</p>
     
     <div class="confirmation-box">
         <h3>Your Submission:</h3>
@@ -43,13 +48,23 @@
     <a href="https://sazzad2151.github.io/portfolio/" class="btn">← Return to Portfolio</a>
 
     <script>
-        // Get URL parameters
-        const params = new URLSearchParams(window.location.search);
+        // Get form data from localStorage
+        const formData = JSON.parse(localStorage.getItem('formData'));
         
         // Display submitted values
-        document.getElementById('submitted-name').textContent = params.get('name') || 'Not provided';
-        document.getElementById('submitted-email').textContent = params.get('email') || 'Not provided';
-        document.getElementById('submitted-message').textContent = params.get('message') || 'Not provided';
+        if (formData) {
+            document.getElementById('submitted-name').textContent = formData.name;
+            document.getElementById('submitted-email').textContent = formData.email;
+            document.getElementById('submitted-message').textContent = formData.message;
+            
+            // Clear the stored data
+            localStorage.removeItem('formData');
+        } else {
+            // Fallback if no data found
+            document.getElementById('submitted-name').textContent = 'Not provided';
+            document.getElementById('submitted-email').textContent = 'Not provided';
+            document.getElementById('submitted-message').textContent = 'Not provided';
+        }
     </script>
 </body>
 </html>
