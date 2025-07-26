@@ -732,52 +732,98 @@
     </footer>
 
     <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function() {
+    // ========== MOBILE NAVIGATION ==========
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links li');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    // Toggle mobile menu
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        this.classList.toggle('is-active');
+    });
+
+    // Close mobile menu when clicking links
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('is-active');
         });
+    });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+    // ========== SMOOTH SCROLLING ==========
+    const scrollLinks = document.querySelectorAll('a[href^="#"]');
+    
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Prevent default anchor behavior
+            e.preventDefault();
+            
+            // Get target element
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Smooth scroll to target
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-            });
+                
+                // Update URL without jumping
+                history.pushState(null, null, targetId);
+            }
         });
-        // Enhanced form handling
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                // Store form data in localStorage before submission
-                localStorage.setItem('formData', JSON.stringify({
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                }));
-            });
+    });
 
-        // Form submission feedback
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            // FormSubmit will handle the submission
-            // This just provides immediate feedback
+    // ========== FORM HANDLING ==========
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Store form data before submission
+            const formData = {
+                name: this.elements['name'].value.trim(),
+                email: this.elements['email'].value.trim(),
+                message: this.elements['message'].value.trim()
+            };
+            
+            // Validate form
+            if (!formData.name || !formData.email || !formData.message) {
+                e.preventDefault();
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Save to localStorage
+            localStorage.setItem('formData', JSON.stringify(formData));
+            
+            // Show temporary feedback
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
             setTimeout(() => {
-                alert('Thank you for your message! I will get back to you soon.');
-                form.reset();
+                submitBtn.textContent = 'Message Sent!';
             }, 500);
+            
+            // FormSubmit will handle the actual submission
         });
+    }
 
+    // ========== SCROLL ANIMATIONS ==========
+    // Add scroll reveal animations if needed
+    window.addEventListener('scroll', function() {
+        // You can add scroll effects here
+    });
 
+    // ========== INITIALIZATION ==========
+    // Initialize any other components here
+});
 
     </script>
 </body>
