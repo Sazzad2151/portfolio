@@ -657,54 +657,57 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's discuss your project</h3>
-                    <p>I'm available for Oracle APEX development projects, consulting, or full-time opportunities. Reach out and let's build something great together!</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>sazzadorcl22@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+880 1717882016</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Dhaka, Bangladesh</span>
-                        </div>
+  <!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Let's discuss your project</h3>
+                <p>I'm available for Oracle APEX development projects, consulting, or full-time opportunities. Reach out and let's build something great together!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sazzadorcl22@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+880 1717882016</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dhaka, Bangladesh</span>
                     </div>
                 </div>
-                <div class="contact-form"><form action="https://formsubmit.co/6035b466851cb8a58e0a9b5934f20961" method="POST">
-    <!-- FormSubmit Configuration -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New message from your portfolio!">
-    <input type="hidden" name="_next" 
-           value="https://sazzad2151.github.io/portfolio/thank-you.html?name=[[name]]&email=[[email]]&message=[[message]]">
-    
-    <!-- Your form fields -->
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-    </div>
-    <button type="submit" class="btn">Send Message</button>
-</form>
-                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm" action="https://formsubmit.co/6035b466851cb8a58e0a9b5934f20961" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New message from your portfolio!">
+                    <input type="hidden" name="_next" value="https://sazzad2151.github.io/portfolio/thank-you.html">
+                    <input type="hidden" name="_template" value="box">
+                    
+                    <!-- Your form fields -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
 
     <!-- Footer -->
@@ -753,6 +756,15 @@
                 });
             });
         });
+        // Enhanced form handling
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                // Store form data in localStorage before submission
+                localStorage.setItem('formData', JSON.stringify({
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                }));
+            });
 
         // Form submission feedback
         const form = document.querySelector('form');
@@ -764,6 +776,9 @@
                 form.reset();
             }, 500);
         });
+
+
+
     </script>
 </body>
 </html>
