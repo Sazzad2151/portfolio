@@ -1,81 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Message Received - Sazzad Hossain</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Thank You - Sazzad Hossain</title>
     <style>
-        :root {
-            --primary-color: #FF6B00;
-            --secondary-color: #1F4E79;
-        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
-            background: #f9f9f9;
-            color: #333;
             line-height: 1.6;
         }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
         .submission-details {
-            text-align: left;
             background: #f5f5f5;
             padding: 20px;
             border-radius: 5px;
-            margin: 30px 0;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-        .btn:hover {
-            background: #E55C00;
-            transform: translateY(-2px);
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Message Received!</h1>
-        <p>Thank you for contacting me. I'll respond to your message as soon as possible.</p>
-        
-        <div class="submission-details">
-            <p><strong>Name:</strong> <span id="display-name">Not provided</span></p>
-            <p><strong>Email:</strong> <span id="display-email">Not provided</span></p>
-            <p><strong>Message:</strong> <span id="display-message">Not provided</span></p>
-        </div>
-        
-        <a href="https://sazzad2151.github.io/portfolio/" class="btn">
-            <i class="fas fa-arrow-left"></i> Return to Portfolio
-        </a>
+    <h1>Message Received!</h1>
+    <p>Thank you for contacting me. I'll respond to your message as soon as possible.</p>
+    
+    <div class="submission-details">
+        <p><strong>Name:</strong> <span id="display-name">Not provided</span></p>
+        <p><strong>Email:</strong> <span id="display-email">Not provided</span></p>
+        <p><strong>Message:</strong> <span id="display-message">Not provided</span></p>
     </div>
 
+    <a href="https://sazzad2151.github.io/portfolio/">Return to Portfolio</a>
+
     <script>
-        // Get parameters from URL
-        const urlParams = new URLSearchParams(window.location.search);
+        // Get the URL parameters
+        const params = new URLSearchParams(window.location.search);
         
-        // Display submitted values
-        document.getElementById('display-name').textContent = urlParams.get('name') || 'Not provided';
-        document.getElementById('display-email').textContent = urlParams.get('email') || 'Not provided';
-        document.getElementById('display-message').textContent = urlParams.get('message') || 'Not provided';
+        // Display the values
+        document.getElementById('display-name').textContent = params.get('name') || 'Not provided';
+        document.getElementById('display-email').textContent = params.get('email') || 'Not provided';
+        document.getElementById('display-message').textContent = params.get('message') || 'Not provided';
     </script>
 </body>
 </html>
