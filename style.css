@@ -1,6 +1,7 @@
-:root {
-            --primary-color: #FF6B00;
-            --secondary-color: #1F4E79; 
+        /* Global Styles */
+        :root {
+            --primary-color: #FF6B00; /* Oracle Brand Orange */
+            --secondary-color: #1F4E79; /* Dark Blue */
             --light-color: #F2F2F2;
             --dark-color: #333333;
         }
@@ -150,46 +151,44 @@
             color: var(--primary-color);
         }
 
-        .hero-text .job-title {
+                .hero-text .job-title {
             font-size: 1.5rem;
             color: #1b43cf;
             margin-bottom: 15px;
             font-weight: 800;
         }
-.job-title {
-      height: 40px; 
-      overflow: hidden;
-      position: relative;
-      font-size: 1.3em;
-      color: #e0e0e0;
-    }
+		.job-title {
+		  height: 40px; 
+		  overflow: hidden;
+		  position: relative;
+		  font-size: 1.3em;
+		  color: #e0e0e0;
+		}
 
-    .job-title ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      animation: slide 6s infinite;
-    }
+		.job-title ul {
+		  list-style: none;
+		  padding: 0;
+		  margin: 0;
+		  position: absolute;
+		  animation: slide 6s infinite;
+		}
 
-    .job-title li {
-      height: 40px; /* same as container height */
-      display: flex;
-      align-items: center;
-    }
+		.job-title li {
+		  height: 40px; /* same as container height */
+		  display: flex;
+		  align-items: center;
+		}
 
-    @keyframes slide {
-      0% { top: 0; }
-      20% { top: 0; }
-      25% { top: -40px; }
-      45% { top: -40px; }
-      50% { top: -80px; }
-      70% { top: -80px; }
-      75% { top: 0; }
-      100% { top: 0; }
-    }
-		
- 
+		@keyframes slide {
+		  0% { top: 0; }
+		  20% { top: 0; }
+		  25% { top: -40px; }
+		  45% { top: -40px; }
+		  50% { top: -80px; }
+		  70% { top: -80px; }
+		  75% { top: 0; }
+		  100% { top: 0; }
+		}
 
         .hero-text p {
             font-size: 1.2rem;
